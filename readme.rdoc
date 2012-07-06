@@ -1,0 +1,12 @@
+= Ukkonen On Ruby
+
+This is Ruby implementation of Ukkonen's algorithm based on:
+1. Mark Nelson's C++ implementation http://marknelson.us/1996/08/01/suffix-trees/
+2. Illya Havsiyevych's Java implementation http://illya-keeplearning.blogspot.com/2009/05/suffix-trees-refactored-java-code.html
+
+== Usage
+
+  require "ukkonen"
+
+  tree = SuffixTree.new("abc")
+  p tree.contains?("bc")
