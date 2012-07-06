@@ -1,8 +1,8 @@
 require "./ukkonen"
 require "test/unit"
- 
+
 class TestSuffixTree < Test::Unit::TestCase
- 
+
   def test_contains
     # is substring present in the given string
     assert_equal(1, SuffixTree.new("abc").contains?("a"))
@@ -48,7 +48,7 @@ class TestSuffixTree < Test::Unit::TestCase
     assert_equal(1, SuffixTree.new("banana").index_of("anana"))
     assert_equal(3, SuffixTree.new("ananas").index_of("nas"))
   end
- 
+
   def test_big_strings
     assert_equal(0, SuffixTree.new("atatatatatatatatatatatatatatatatatatatatatatata\
 tatatatatatatatatatatatatatatatatatatatatatatatatatatatatatata").contains?("taa"))

@@ -15,14 +15,14 @@ class SuffixTree
     index_of(str) != -1 ? 1 : 0
   end
 
-  def index_of(str) 
+  def index_of(str)
     return -1 if str.length == 0
 
     index = -1
     node = @root
 
     i = 0
-    while i < str.length 
+    while i < str.length
       return -1 if (node == nil || i == text.length)
 
       edge = node.find_edge(str[i])
@@ -39,7 +39,7 @@ class SuffixTree
 
         i += 1
       end
-      
+
       node = edge.end_node
     end
     index
@@ -71,7 +71,7 @@ class SuffixTree
           queue << edge.end_node# if edge.end_node
         end
       end
-    end  
+    end
   end
 
   private
@@ -97,7 +97,7 @@ class SuffixTree
             parent_node = edge.split(active, @text, @nodes_count)
             @nodes_count += 1
         end
-        
+
         new_edge = Edge.new(end_index, @text.length - 1, parent_node, @nodes_count)
         @nodes_count += 1
         new_edge.insert(@text)
@@ -182,10 +182,10 @@ class SuffixTree
           @origin_node = edge.end_node
 
           if @begin_index <= @end_index
-            edge = edge.end_node.find_edge(text[@begin_index]) 
+            edge = edge.end_node.find_edge(text[@begin_index])
           end
         end
-      end      
+      end
     end
   end
 
@@ -198,9 +198,9 @@ class SuffixTree
       @edges = Hash.new {}
       @name = nodes_count
     end
-    
+
     def add_edge(i, edge)
-      @edges[i] = edge    
+      @edges[i] = edge
     end
 
     def delete_edge(i)
