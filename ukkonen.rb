@@ -12,7 +12,7 @@ class SuffixTree
   end
 
   def contains?(str)
-    index_of(str) == -1 ? false : true
+    index_of(str) != -1
   end
 
   def index_of(str)
